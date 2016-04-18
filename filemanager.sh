@@ -55,10 +55,10 @@ cat > $rutorrent_path/plugins/filemanager/conf.php << EOF
 \$fm['mkdperm'] = 755;           // default permission to set to new created directories
 
 // set with fullpath to binary or leave empty
-\$pathToExternals['rar'] = '/usr/local/bin/rar';
-\$pathToExternals['zip'] = '/usr/bin/zip';
-\$pathToExternals['unzip'] = '/usr/bin/unzip';
-\$pathToExternals['tar'] = '/bin/tar';
+\$pathToExternals['rar'] = '$(which rar)';
+\$pathToExternals['zip'] = '$(which zip)';
+\$pathToExternals['unzip'] = '$(which unzip)';
+\$pathToExternals['tar'] = '$(which tar)';
 
 // archive mangling, see archiver man page before editing
 
