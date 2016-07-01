@@ -20,7 +20,7 @@ fi
 
 # Asking for the ruTorrent path folder
 read -p "Please type your ruTorrent path folder: " -e -i /var/www/rutorrent rutorrent_path
-read -p "Please type your rTorrent downloads path folder (exemple: /home/user/Downloads): " -e rtorrent_downloads
+read -p "Please type your rTorrent downloads path folder (example: /home/user/Downloads): " -e rtorrent_downloads
 
 
 # Installing dependencies
