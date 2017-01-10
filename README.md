@@ -5,5 +5,3 @@ Installation
 * chmod +x filemanager.sh
  
 * ./filemanager.sh
-
-**Works for single user installation only.**
