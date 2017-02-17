@@ -33,9 +33,9 @@ then
     tar -xzvf rarlinux-x64.tar.gz
     rm rarlinux-x64.tar.gz
 else
-    wget -O rarlinux-x64.tar.gz http://www.rarlab.com/rar/rarlinux-5.4.0.tar.gz
-    tar -xzvf rarlinux-x64.tar.gz
-    rm rarlinux-x64.tar.gz
+    wget -O rarlinux.tar.gz http://www.rarlab.com/rar/rarlinux-5.4.0.tar.gz
+    tar -xzvf rarlinux.tar.gz
+    rm rarlinux.tar.gz
 fi
 
 mv -v rar/rar_static /usr/local/bin/rar
