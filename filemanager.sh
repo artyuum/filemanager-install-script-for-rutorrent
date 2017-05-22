@@ -57,6 +57,7 @@ cat > $rutorrent_path/plugins/filemanager/conf.php << EOF
 \$pathToExternals['zip'] = '$(which zip)';
 \$pathToExternals['unzip'] = '$(which unzip)';
 \$pathToExternals['tar'] = '$(which tar)';
+\$pathToExternals['bzip2'] = '$(which bzip2)';
 
 // archive mangling, see archiver man page before editing
 
