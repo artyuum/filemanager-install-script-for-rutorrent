@@ -8,7 +8,6 @@
 # --------------------------------------------------------------------------------
 clear
 
-
 # Checking if user is root
 if [ "$(id -u)" != "0" ]; then
 	echo
@@ -17,10 +16,8 @@ if [ "$(id -u)" != "0" ]; then
 	exit 1
 fi
 
-
 # Asking for the ruTorrent path folder
 read -p "Please type your ruTorrent path folder: " -e -i /var/www/rutorrent rutorrent_path
-
 
 # Installing dependencies
 apt-get install subversion zip
@@ -29,18 +26,16 @@ cd /tmp
 
 if [ `getconf LONG_BIT` = "64" ]
 then
-    wget -O rarlinux-x64.tar.gz http://www.rarlab.com/rar/rarlinux-x64-5.4.0.tar.gz
-    tar -xzvf rarlinux-x64.tar.gz
-    rm rarlinux-x64.tar.gz
+    wget -O rarlinux.tar.gz http://www.rarlab.com/rar/rarlinux-x64-5.5.0.tar.gz
 else
-    wget -O rarlinux.tar.gz http://www.rarlab.com/rar/rarlinux-5.4.0.tar.gz
-    tar -xzvf rarlinux.tar.gz
-    rm rarlinux.tar.gz
+    wget -O rarlinux.tar.gz http://www.rarlab.com/rar/rarlinux-5.5.0.tar.gz
 fi
 
-mv -v rar/rar_static /usr/local/bin/rar
-chmod 755 /usr/local/bin/rar
+tar -xzvf rarlinux.tar.gz
+rm rarlinux.tar.gz
 
+mv -v rar/rar /usr/local/bin/rar
+chmod 755 /usr/local/bin/rar
 
 # Installing and configuring filemanager plugin
 cd $rutorrent_path/plugins/
@@ -70,11 +65,9 @@ cat > $rutorrent_path/plugins/filemanager/conf.php << EOF
 ?>
 EOF
 
-
 # Permissions for filemanager
 chown -R www-data:www-data $rutorrent_path/plugins/filemanager
 chmod -R 775 $rutorrent_path/plugins/filemanager/scripts
-
 
 # End of the script
 clear
